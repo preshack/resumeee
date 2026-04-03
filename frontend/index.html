@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="ApplyAI — AI-powered job application assistant. Generate tailored LaTeX resumes and cover letters in seconds." />
+    <title>ApplyAI — AI-Powered Job Application Assistant</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- latex.js from CDN for in-browser LaTeX rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/latex.js@0.12.6/dist/latex.min.js"></script>
+
+    <style>
+      /* Print styles — isolate preview panel for print-to-PDF */
+      @media print {
+        body > * { display: none !important; }
+        #print-target { display: block !important; }
+        #print-target * { display: revert !important; }
+      }
+    </style>
+  </head>
+  <body class="bg-navy-900 text-white overflow-hidden">
+    <div id="root"></div>
+    <div id="print-target" style="display:none;"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
